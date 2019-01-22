@@ -7,11 +7,11 @@ This reporting tool is a Python program using the psycopg2 module to connect to 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 ### Prerequisites
-Python 2.x is required to execute this program
+Python 3 is required to execute this program
 Download and install vagrant
 ### Installing
 * Download the project zip file locally to your computer and unzip in the directory with vagrant
-* Download the newsdata.sql database to the same directory.
+* Download the newsdata.sql database to the same directory from [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 * CD into the vagrant directory and do "vagrant up" and "vagrant ssh". Then cd /vagrant and cd into the loganalysis directory
 * Execute the views
 		Follow the below steps to setup the DB and execute the views
@@ -21,7 +21,7 @@ Download and install vagrant
 ### Executing Views for the SQL queries
 * Problem 1: What are the most popular three articles of all time?
 
-create view path_count as select path, count(*) as num from log where path != '/' group by path order by num desc limit 3;
+create view path_count as select path, count(*) as num from log where path != '/' group by path order by num desc;
 
 * Problem 2: Who are the most popular article authors of all time?
 
